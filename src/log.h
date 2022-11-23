@@ -8,6 +8,7 @@
 #ifndef LOG_H
 #define LOG_H
 
+#define LOG_USE_COLOR 0
 #define LOG_VERSION "0.1.0"
 
 #ifdef __cplusplus
