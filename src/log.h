@@ -8,12 +8,16 @@
 #ifndef LOG_H
 #define LOG_H
 
+#define LOG_VERSION "0.1.0"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <time.h>
-
-#define LOG_VERSION "0.1.0"
 
 typedef struct {
   va_list ap;
@@ -45,5 +49,9 @@ int log_add_callback(log_LogFn fn, void *udata, int level);
 int log_add_fp(FILE *fp, int level);
 
 void log_log(int level, const char *file, int line, const char *fmt, ...);
+
+#ifdef __cplusplus
+} /*extern "C"*/
+#endif
 
 #endif
